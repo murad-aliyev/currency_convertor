@@ -30,6 +30,7 @@
     margin-right: 15px;
     margin-left: 15px;
     color: #959BA4;
+    font-size: 14px;
 }
 
 .button {
@@ -72,7 +73,7 @@ h1{
 
 .body{
     margin-left: 25%;
-    margin-top: 10%;
+    margin-top: 9%;
 }
 
 .convertor{
@@ -83,7 +84,7 @@ h1{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 14px;
     display: flex;
     align-items: center;
@@ -111,7 +112,7 @@ h1{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 14px;
     display: flex;
     align-items: center;
@@ -185,7 +186,7 @@ input{
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  
+
 }
 
 .text2{
@@ -199,5 +200,8 @@ input::-webkit-inner-spin-button {
     display: flex;
     align-items: center;
     color: #C6C6C6;
-
 }
+
+/* @media screen and (min-width:320px) and (max-width:991px) {
+
+} */
