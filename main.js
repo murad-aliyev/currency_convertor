@@ -8,15 +8,6 @@ console.log(currencyLeft)
 console.log(currencyRight)
 let left = 'RUB', right = 'USD';
 
-// function changeText(event) {
-//     event.class = 'currency-clicked';
-
-//     console.log(item.className)
-// }
-//      currency.forEach((element) => {  
-//         element.addEventListener('click', changeText);
-//       });
-
 
 console.log(inputRight.value)
 
@@ -28,20 +19,50 @@ function func(){
     console.log(left , right);
 
     mezenneLeft.innerText=`1 ${left} = ${data.rates[right]} ${right}`;
-    mezenneRight.innerText=`1 ${right} = ${1/data.rates[right]} ${left}`;
 
-    inputLeft.addEventListener('click', () => {
+    inputLeft.addEventListener('keyup', () => {
       console.log(inputLeft.value);
       inputRight.value=Number(inputLeft.value)*Number(data.rates[right])
-    });
+    })
+    
+})
+.catch( error =>{
+  alert('İnternet qoşulu deyil!')
+  console.log('İnternet qoşulu deyil!')
 })
 
 }
 
+
+
+
+function func2(){
+  fetch(`https://api.exchangerate.host/latest?base=${right}&symbols=${left}`)
+  .then(response => response.json())
+  .then(data =>{
+    console.log(data.rates[left]);
+    console.log(left , right);
+
+    mezenneRight.innerText=`1 ${right} = ${data.rates[left]} ${left}`;
+
+    inputRight.addEventListener('keyup', () => {
+      console.log(inputRight.value);
+      inputLeft.value=Number(inputRight.value)*Number(data.rates[left])
+    });
+})
+.catch( error =>{
+  alert('İnternet qoşulu deyil!')
+  console.log('İnternet qoşulu deyil!')
+})
+}
+
+
 currencyLeft.forEach((item)=>{
   item.addEventListener('click',(e)=>{
     left = e.target.innerText;
+    
     func();
+    func2();
     
     if(e.target){
           e.target.class = 'active';
@@ -63,6 +84,7 @@ currencyRight.forEach((item)=>{
   item.addEventListener('click',(e)=>{
     right = e.target.innerText;
     func();
+    func2();
     if(e.target){
           e.target.class = 'active';
     let noButton = document.querySelectorAll('.currency-right:not(.active)');
@@ -80,3 +102,4 @@ currencyRight.forEach((item)=>{
 })
 
 func();
+func2();
