@@ -242,14 +242,14 @@ input::-webkit-inner-spin-button {
     
 }
 
-@media screen and (min-width:471px) and (max-width:991px) {
+@media screen and (max-width:991px) {
     .convertor{
         display: block;
-        margin-left: 10%;
+        margin-left: 7%;
     }
     .h1{
         font-size: 24px;
-        margin-left: 10%;
+        margin-left: 7%;
     }
     .left{
         margin-bottom: 20px;
@@ -296,5 +296,8 @@ input::-webkit-inner-spin-button {
     .logo {
         width: 67px;
         height: 17px;
+    }
+    .menu{
+        display: none;
     }
 }
